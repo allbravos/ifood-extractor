@@ -1,0 +1,5 @@
+pybase64==1.1.4
+jsonschema==3.2.0
+beautifulsoup4==4.9.3
+pandas==1.2.3
+requests==2.25.1
