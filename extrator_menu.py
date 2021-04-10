@@ -17,14 +17,19 @@ def get(obj, key):
     return value
 
 
-def add_txt(text):
-    text = str(text)
-    try:
-        text = text.replace('"', "'")
-    except:
-        print('A string estava com formato invalido.')
-    text = '"' + text + '",'
-    return text
+# def add_txt(text):
+#     text = str(text)
+#     try:
+#         text = text.replace('"', "'")
+#     except:
+#         print('A string estava com formato invalido.')
+#     text = '"' + text + '",'
+#     return text
+
+
+# Função by-pass, devido a troca da escrita em arquivo para pandas.to_csv
+def add_txt(value):
+    return value
 
 
 def get_download_link(data):
