@@ -97,19 +97,14 @@ if button:
             need_choices = str(item['needChoices'])
             logo_url = get(item, 'logoUrl')
 
-            # Adiciona a lista de opcoes do item do menu, se tiver opcoes
-            choices_as_text = str()
-            option_values = str()
-            choice_description = str()
-            max_items = ''
             if len(item['choices']) == 0:
 
                 new_row = {'restaurant_id': add_txt(restaurant_id), 'category': add_txt(category_name),
                            'category_2': '', 'category_3': '', 'menu': add_txt(description),
                            'price': add_txt(price), 'description': add_txt(detail),
-                           'option': add_txt(''), 'options': add_txt(''),
-                           'option_item_price': add_txt(''), 'multiple_choice': add_txt(need_choices),
-                           'order_limit': add_txt(max_items), 'photo': logo_url}
+                           'option': '', 'options': '',
+                           'option_item_price': '', 'multiple_choice': add_txt(need_choices),
+                           'order_limit': '', 'photo': logo_url}
 
                 df = df.append(new_row, ignore_index=True)
             else:
@@ -118,6 +113,9 @@ if button:
 
                     choice_description = choices['name']
                     max_items = choices['max']
+
+                    choices_as_text = str()
+                    option_values = str()
 
                     for choice in choices['garnishItens']:
                         if choices_as_text != '':
